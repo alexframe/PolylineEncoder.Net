@@ -16,7 +16,7 @@ namespace PolylineEncoder.Net.Models
             set
             {
                 if (value < -90D || value > 90D)
-                    throw new ArgumentOutOfRangeException(nameof(Latitude), $"{nameof(Latitude)} must be between -90 and 90.");
+                    throw new ArgumentOutOfRangeException(nameof(Latitude), $"{nameof(Latitude)} must be between -90 and 90. Value {value}");
 
                 _latitude = value;
             }
@@ -32,8 +32,8 @@ namespace PolylineEncoder.Net.Models
             }
             set
             {
-                if (value < -90D || value > 90D)
-                    throw new ArgumentOutOfRangeException(nameof(Longitude), $"{nameof(Longitude)} must be between -180 and 180.");
+                if (value < -180D || value >180D)
+                    throw new ArgumentOutOfRangeException(nameof(Longitude), $"{nameof(Longitude)} must be between -180 and 180. Value: {value}");
 
                 _longitude = value;
             }

@@ -19,7 +19,7 @@ namespace PolylineEncoder.Net.Utility
             _decoder = decoder;
         }
 
-        public string Encode(decimal latitude, decimal longitude)
+        public string Encode(double latitude, double longitude)
         {
             return _encoder.Encode(latitude, longitude);
         }
@@ -29,7 +29,7 @@ namespace PolylineEncoder.Net.Utility
             return _encoder.Encode(point);
         }
 
-        public string Encode(IEnumerable<Tuple<decimal, decimal>> points)
+        public string Encode(IEnumerable<Tuple<double, double>> points)
         {
             return _encoder.Encode(points);
         }

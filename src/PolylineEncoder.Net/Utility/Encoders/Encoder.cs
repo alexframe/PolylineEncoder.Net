@@ -8,7 +8,7 @@ namespace PolylineEncoder.Net.Utility.Encoders
 {
     public class Encoder : IPolylineEncoder
     {
-        public string Encode(decimal latitude, decimal longitude)
+        public string Encode(double latitude, double longitude)
         {
             return Encode(new GeoCoordinate(latitude, longitude));
         }
@@ -18,7 +18,7 @@ namespace PolylineEncoder.Net.Utility.Encoders
             return Encode(new[] { point });
         }
 
-        public string Encode(IEnumerable<Tuple<decimal, decimal>> points)
+        public string Encode(IEnumerable<Tuple<double, double>> points)
         {
             if (points == null)
                 throw new ArgumentNullException(nameof(points));
