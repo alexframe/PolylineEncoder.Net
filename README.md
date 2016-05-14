@@ -4,7 +4,7 @@
 Allows you to encode and decode lat/long pairs into Google's encoded polyline format. You can learn more about Google's algorithm [here][1], but you don't have to, let this package do the work for you.
 
 ### Getting Started
-Install via Nuget. In Package manager run:
+Install via[ `PolylineEncoder.Net`][2] package on Nuget. In Package manager run:
 
 ````csharp
 Install-Package PolylineEncoder.Net
@@ -34,3 +34,4 @@ var decodedPoints = utility.Decode(polyLine); // output: An IEnumerable<IGeoCoor
 ```
 
   [1]: https://developers.google.com/maps/documentation/utilities/polylinealgorithm
+  [2]: https://www.nuget.org/packages/PolylineEncoder.Net
