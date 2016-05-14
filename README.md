@@ -4,6 +4,9 @@
 Allows you to encode and decode lat/long pairs into Google's encoded polyline format. 
 Learn more about Google's algorithm [here.][1]
 
+### Getting Started
+`Install-Package PolylineEncoder.Net`
+
 ### Usage
 ```csharp
 // Create a polyline utility.
