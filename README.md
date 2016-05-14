@@ -21,6 +21,8 @@ var geoPoints = new List<IGeoCoordinate>
 // Encode points to string.
 var polyLine = utility.Encode(geoPoints);
 
+// output: _p~iF~ps|U_ulLnnqC_mqNvxq`@
+
 // Decode string to points.
 var decodedPoints = utility.Decode(polyLine);
 ```
