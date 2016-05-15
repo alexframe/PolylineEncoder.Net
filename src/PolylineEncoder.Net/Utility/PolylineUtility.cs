@@ -19,6 +19,11 @@ namespace PolylineEncoder.Net.Utility
             _decoder = decoder;
         }
 
+        public string Encode(string delimtedLatLongs, char latLongDelmiter = ',', char pairDelimter = '|')
+        {
+            return _encoder.Encode(delimtedLatLongs, latLongDelmiter, pairDelimter);
+        }
+
         public string Encode(double latitude, double longitude)
         {
             return _encoder.Encode(latitude, longitude);

@@ -8,6 +8,28 @@ namespace PolylineEncoder.Net.Utility.Encoders
 {
     public class Encoder : IPolylineEncoder
     {
+        public string Encode(string delimitedLatLongs, char latLongDelmiter = ',', char pairDelimter = '|')
+        {
+            if (!string.IsNullOrEmpty(delimitedLatLongs))
+            {
+                var latLongs = delimitedLatLongs.Split(pairDelimter);
+
+                var geoPoints = new List<IGeoCoordinate>();
+
+                foreach (var latLong in latLongs)
+                {
+                    var lat = double.Parse(latLong.Split(latLongDelmiter)[0]);
+                    var lng = double.Parse(latLong.Split(latLongDelmiter)[1]);
+
+                    geoPoints.Add(new GeoCoordinate(lat,lng));
+                }
+
+                return Encode(geoPoints);
+            }
+
+            return null;
+        }
+
         public string Encode(double latitude, double longitude)
         {
             return Encode(new GeoCoordinate(latitude, longitude));
