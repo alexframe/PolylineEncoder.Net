@@ -1,11 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using PolylineEncoder.Net.Models;
 
 namespace PolylineEncoder.Net.Utility.Decoders
 {
     public class Decoder : IPolylineDecoder
     {
+        public string DecodeAsString(string encodedLatLongs, char latLongDelmiter = ',', char pairDelimter = '|')
+        {
+            var delimitedLatLngs = new StringBuilder();
+
+            if (!string.IsNullOrEmpty(encodedLatLongs))
+            {
+                var geoPoints = Decode(encodedLatLongs).ToList();
+
+                foreach (var geoPoint in geoPoints)
+                {
+                    delimitedLatLngs.Append($"{geoPoint.Latitude}{latLongDelmiter}{geoPoint.Longitude}{pairDelimter}");
+                }
+
+                if (geoPoints.Any())
+                    delimitedLatLngs.Length = delimitedLatLngs.Length - 1;
+            }
+
+            return delimitedLatLngs.ToString();
+        }
+
         public IEnumerable<Tuple<double, double>> DecodeAsTuples(string encodedPoints)
         {
             if (!string.IsNullOrEmpty(encodedPoints))

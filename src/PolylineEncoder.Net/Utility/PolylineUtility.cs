@@ -44,6 +44,11 @@ namespace PolylineEncoder.Net.Utility
             return _encoder.Encode(points);
         }
 
+        public string DecodeAsString(string encodedLatLongs, char latLongDelmiter = ',', char pairDelimter = '|')
+        {
+            return _decoder.DecodeAsString(encodedLatLongs, latLongDelmiter, pairDelimter);
+        }
+
         public IEnumerable<Tuple<double, double>> DecodeAsTuples(string encodedPoints)
         {
             return _decoder.DecodeAsTuples(encodedPoints);
