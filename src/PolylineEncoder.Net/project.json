@@ -1,8 +1,8 @@
-﻿{
+{
   "version": "1.1.0-*",
-  "description": "PolylineEncoder.Net",
+  "description": "PolylineEncoder.Net is a super lightweight utility to encode and decode latitude and longitude using Google Polyline algorithm. You can learn more about how Google implements and uses this with their maps api here: https://developers.google.com/maps/documentation/utilities/polylinealgorithm",
   "authors": [ "alexframe" ],
-  "tags": [ "google maps", "polyline" ],
+  "tags": [ "google maps", "google-maps", "polyline", "lat/long", "latitude", "longitude" ],
   "projectUrl": "https://github.com/alexframe/PolylineEncoder.Net/",
   "licenseUrl": "https://github.com/alexframe/PolylineEncoder.Net/blob/master/LICENSE",
 
