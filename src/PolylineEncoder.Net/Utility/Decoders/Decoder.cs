@@ -10,6 +10,9 @@ namespace PolylineEncoder.Net.Utility.Decoders
     {
         public string DecodeAsString(string encodedLatLongs, char latLongDelmiter = ',', char pairDelimter = '|')
         {
+            if (latLongDelmiter == pairDelimter)
+                throw new ArgumentException($"{nameof(latLongDelmiter)} and {nameof(pairDelimter)} must be different.");
+
             var delimitedLatLngs = new StringBuilder();
 
             if (!string.IsNullOrEmpty(encodedLatLongs))
