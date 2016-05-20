@@ -17,3 +17,7 @@ build:
 artifacts:
 - path: '**\*.nupkg' 
   name: Nuget
+
+test_script:
+	- cmd: >-
+		dnx -p test\PolylineEncoder.Net.Tests\project.json test
