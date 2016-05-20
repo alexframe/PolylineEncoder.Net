@@ -19,5 +19,5 @@ artifacts:
   name: Nuget
 
 test_script:
-	- cmd: >-
-		dnx -p test\PolylineEncoder.Net.Tests\project.json test
+- cmd: >-
+    dnx -p test\PolylineEncoder.Net.Tests\project.json test
