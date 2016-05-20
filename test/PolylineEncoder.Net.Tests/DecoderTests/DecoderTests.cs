@@ -1,4 +1,9 @@
-﻿using PolylineEncoder.Net.Utility.Decoders;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using PolylineEncoder.Net.Models;
+using PolylineEncoder.Net.Utility.Decoders;
+using PolylineEncoder.Net.Utility.Encoders;
 using Xunit;
 
 namespace PolylineEncoder.Net.Tests.DecoderTests
@@ -15,5 +20,16 @@ namespace PolylineEncoder.Net.Tests.DecoderTests
 
             Assert.Equal(decoder.DecodeAsString(googleInput), googleOutput);
         }
+
+        [Fact]
+        public void StringDecodeShouldNotMatchGoogle()
+        {
+            var decoder = new Decoder();
+            const string googleInput = "_p~iF~ps|U_ulLnnqC_mqNvxq`@";
+            const string googleOutput = "40.7,-120.95|38.5,-120.2|43.252,-126.453";
+
+            Assert.NotEqual(decoder.DecodeAsString(googleInput), googleOutput);
+        }
+        
     }
 }
