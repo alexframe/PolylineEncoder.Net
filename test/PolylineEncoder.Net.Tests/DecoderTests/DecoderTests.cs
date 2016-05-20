@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using PolylineEncoder.Net.Models;
-using PolylineEncoder.Net.Utility.Decoders;
-using PolylineEncoder.Net.Utility.Encoders;
+﻿using PolylineEncoder.Net.Utility.Decoders;
 using Xunit;
 
 namespace PolylineEncoder.Net.Tests.DecoderTests

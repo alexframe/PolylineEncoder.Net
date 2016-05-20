@@ -32,7 +32,7 @@ namespace PolylineEncoder.Net.Models
             }
             set
             {
-                if (value < -180D || value >180D)
+                if (value < -180D || value > 180D)
                     throw new ArgumentOutOfRangeException(nameof(Longitude), $"{nameof(Longitude)} must be between -180 and 180. Value: {value}");
 
                 _longitude = value;
@@ -54,5 +54,24 @@ namespace PolylineEncoder.Net.Models
         public GeoCoordinate(decimal latitude, decimal longitude) : this((double)latitude, (double)longitude) { }
 
         #endregion
+
+        public override bool Equals(object obj)
+        {
+            // If parameter cannot be cast to Point return false.
+            var point = obj as IGeoCoordinate;
+            if (point == null)
+            {
+                return false;
+            }
+
+            // Return true if the fields match:
+            return Latitude.Equals(point.Latitude)
+                   && Longitude.Equals(point.Longitude);
+        }
+
+        public override int GetHashCode()
+        {
+            return Latitude.GetHashCode() + Longitude.GetHashCode();
+        }
     }
 }
