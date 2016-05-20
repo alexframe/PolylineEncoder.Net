@@ -15,7 +15,7 @@ build:
   include_nuget_references: true
   verbosity: minimal
 artifacts:
-- path: '**\*.nupkg' 
+- path: 'artifacts\bin\PolylineEncoder.Net\Release\*.nupkg' 
   name: Nuget
 
 test_script:
