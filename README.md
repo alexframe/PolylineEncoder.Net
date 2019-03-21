@@ -30,7 +30,7 @@ var geoPoints = new List<IGeoCoordinate>
 var polyLine = utility.Encode(geoPoints); // output: _p~iF~ps|U_ulLnnqC_mqNvxq`@
 
 // Decode string to points.
-var decodedPoints = utility.Decode(polyLine); // output: An IEnumerable<IGeoCoorindate> equal to geoPoints.
+var decodedPoints = utility.Decode(polyLine); // output: An IEnumerable<IGeoCoordinate> equal to geoPoints.
 ```
 
   [1]: https://developers.google.com/maps/documentation/utilities/polylinealgorithm
